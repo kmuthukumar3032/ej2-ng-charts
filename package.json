@@ -1,6 +1,6 @@
 {
 	"name": "@syncfusion/ej2-ng-charts",
-	"version": "1.0.8",
+	"version": "1.0.0",
 	"description": "Chart Components",
 	"author": "Syncfusion Inc.",
 	"license": "SEE LICENSE IN license",
@@ -27,10 +27,24 @@
 		"rollup": "^0.41.6",
 		"rollup-plugin-uglify": "^1.0.1",
 		"systemjs": "^0.19.40",
-		"systemjs-plugin-babel": "0.0.17"
+		"systemjs-plugin-babel": "0.0.17",
+		"es6-promise": "^3.2.1",
+		"gulp": "^3.9.1",
+		"gulp-sass": "^3.1.0",
+		"gulp-typescript": "^3.1.6",
+		"requirejs": "^2.3.3",
+		"typescript": "2.2.2"
+	},
+	"keywords": [
+		"ej2",
+		"syncfusion",
+		"ej2-ng-charts"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/syncfusion/ej2-ng-charts.git"
 	},
 	"scripts": {
-		"scripts": "ngc -p tsconfig-aot.json && rollup -c rollup.config.js",
-		"bundle": "rollup -c rollup.config.js"
+		"build": "gulp build"
 	}
 }
