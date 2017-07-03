@@ -1,5 +1,6 @@
-import { Directive, ContentChildren } from '@angular/core';
+import { Directive, ViewContainerRef, ContentChildren } from '@angular/core';
 import { ComplexBase, ArrayBase } from '@syncfusion/ej2-ng-base';
+
 
 
 let input: string[] = ['border', 'width'];
@@ -25,10 +26,13 @@ export class ColumnDirective extends ComplexBase<ColumnDirective> {
     */
     public border: any;
     /** 
-    * The width of the column as a string in order to provide input as both like '100px' or '100%'.If specified as '100%, column will render to the full width of its chart.
-    * @default 100%
+    * The width of the column as a string in order to provide input as both like '100px' or '100%'.     * If specified as '100%, column will render to the full width of its chart.     * @default 100%
     */
-    public width: string;
+    public width: any;
+
+    constructor(private viewContainerRef:ViewContainerRef) {
+        super();
+    }
 }
 
 /**

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SeriesDirective, SeriessDirective } from './series.directive';
-import { AxisDirective, AxissDirective } from './axes.directive';
+import { SeriesDirective, SeriesCollectionDirective } from './series.directive';
+import { AxisDirective, AxesDirective } from './axes.directive';
 import { RowDirective, RowsDirective } from './rows.directive';
 import { ColumnDirective, ColumnsDirective } from './columns.directive';
-import { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesService, SplineSeriesService, AreaSeriesService, StepLineSeriesService, StackingColumnSeriesService, StackingAreaSeriesService, BarSeriesService, StackingBarSeriesService, TooltipService, CrosshairService, CategoryService, DateTimeService, LogarithmicService, MarkerService, LegendService, ZoomService, DataLabelService, SelectionService } from './chart.component';
+import { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesService, SplineSeriesService, AreaSeriesService, StepLineSeriesService, StackingColumnSeriesService, StackingAreaSeriesService, BarSeriesService, StackingBarSeriesService, RangeColumnSeriesService, TooltipService, CrosshairService, CategoryService, DateTimeService, LogarithmicService, MarkerService, LegendService, ZoomService, DataLabelService, SelectionService } from './chart.component';
 
 /**
  * NgModule definition for the Chart component.
@@ -14,9 +14,9 @@ import { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesSe
     declarations: [
         ChartComponent,
         SeriesDirective,
-        SeriessDirective,
+        SeriesCollectionDirective,
         AxisDirective,
-        AxissDirective,
+        AxesDirective,
         RowDirective,
         RowsDirective,
         ColumnDirective,
@@ -25,9 +25,9 @@ import { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesSe
     exports: [
         ChartComponent,
         SeriesDirective,
-        SeriessDirective,
+        SeriesCollectionDirective,
         AxisDirective,
-        AxissDirective,
+        AxesDirective,
         RowDirective,
         RowsDirective,
         ColumnDirective,

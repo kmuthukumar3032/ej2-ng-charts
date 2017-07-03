@@ -1,9 +1,10 @@
-import { Component, ElementRef, ChangeDetectionStrategy, ValueProvider, ContentChild, Optional } from '@angular/core';
+import { Component, ElementRef, ViewContainerRef, ChangeDetectionStrategy, ValueProvider, ContentChild, Optional } from '@angular/core';
 import { ComponentBase, IComponentBase, applyMixins, PropertyCollectionInfo } from '@syncfusion/ej2-ng-base';
 import { getValue } from '@syncfusion/ej2-base/util';
-import { Chart, LineSeries, ScatterSeries, ColumnSeries, SplineSeries, AreaSeries, StepLineSeries, StackingColumnSeries, StackingAreaSeries, BarSeries, StackingBarSeries, Tooltip, Crosshair, Category, DateTime, Logarithmic, Marker, Legend, Zoom, DataLabel, Selection } from '@syncfusion/ej2-charts';
-import { SeriessDirective } from './series.directive';
-import { AxissDirective } from './axes.directive';
+import { Chart, LineSeries, ScatterSeries, ColumnSeries, SplineSeries, AreaSeries, StepLineSeries, StackingColumnSeries, StackingAreaSeries, BarSeries, StackingBarSeries, RangeColumnSeries, Tooltip, Crosshair, Category, DateTime, Logarithmic, Marker, Legend, Zoom, DataLabel, Selection } from '@syncfusion/ej2-charts';
+
+import { SeriesCollectionDirective } from './series.directive';
+import { AxesDirective } from './axes.directive';
 import { RowsDirective } from './rows.directive';
 import { ColumnsDirective } from './columns.directive';
 
@@ -24,8 +25,8 @@ export const twoWays: string[] = [''];
     template: '',
     changeDetection: ChangeDetectionStrategy.OnPush,
     queries: {
-        childSeries: new ContentChild(SeriessDirective), 
-        childAxes: new ContentChild(AxissDirective), 
+        childSeries: new ContentChild(SeriesCollectionDirective), 
+        childAxes: new ContentChild(AxesDirective), 
         childRows: new ContentChild(RowsDirective), 
         childColumns: new ContentChild(ColumnsDirective)
     }
@@ -37,11 +38,12 @@ export class ChartComponent extends Chart implements IComponentBase {
     public childColumns: any;
     public tags: string[] = ['series', 'axes', 'rows', 'columns'];
 
-    constructor(private ngEle: ElementRef, @Optional() lineSeries: LineSeries, @Optional() scatterSeries: ScatterSeries, @Optional() columnSeries: ColumnSeries, @Optional() splineSeries: SplineSeries, @Optional() areaSeries: AreaSeries, @Optional() stepLineSeries: StepLineSeries, @Optional() stackingColumnSeries: StackingColumnSeries, @Optional() stackingAreaSeries: StackingAreaSeries, @Optional() barSeries: BarSeries, @Optional() stackingBarSeries: StackingBarSeries, @Optional() tooltip: Tooltip, @Optional() crosshair: Crosshair, @Optional() category: Category, @Optional() dateTime: DateTime, @Optional() logarithmic: Logarithmic, @Optional() marker: Marker, @Optional() legend: Legend, @Optional() zoom: Zoom, @Optional() dataLabel: DataLabel, @Optional() selection: Selection) {
+
+    constructor(private ngEle: ElementRef, private viewContainerRef:ViewContainerRef, @Optional() lineSeries: LineSeries, @Optional() scatterSeries: ScatterSeries, @Optional() columnSeries: ColumnSeries, @Optional() splineSeries: SplineSeries, @Optional() areaSeries: AreaSeries, @Optional() stepLineSeries: StepLineSeries, @Optional() stackingColumnSeries: StackingColumnSeries, @Optional() stackingAreaSeries: StackingAreaSeries, @Optional() barSeries: BarSeries, @Optional() stackingBarSeries: StackingBarSeries, @Optional() rangeColumnSeries: RangeColumnSeries, @Optional() tooltip: Tooltip, @Optional() crosshair: Crosshair, @Optional() category: Category, @Optional() dateTime: DateTime, @Optional() logarithmic: Logarithmic, @Optional() marker: Marker, @Optional() legend: Legend, @Optional() zoom: Zoom, @Optional() dataLabel: DataLabel, @Optional() selection: Selection) {
         super();
         this.element = this.ngEle.nativeElement;
         this.injectedModules = this.injectedModules || [];
-        for (let i: number = 1; i < arguments.length; i++) {
+        for (let i: number = 2; i < arguments.length; i++) {
             let injectedObj: Object = arguments[i];
             if (injectedObj) {
                 this.injectedModules.push(<Function>injectedObj);
@@ -79,6 +81,7 @@ export const StackingColumnSeriesService: ValueProvider = { provide: StackingCol
 export const StackingAreaSeriesService: ValueProvider = { provide: StackingAreaSeries, useValue: StackingAreaSeries};
 export const BarSeriesService: ValueProvider = { provide: BarSeries, useValue: BarSeries};
 export const StackingBarSeriesService: ValueProvider = { provide: StackingBarSeries, useValue: StackingBarSeries};
+export const RangeColumnSeriesService: ValueProvider = { provide: RangeColumnSeries, useValue: RangeColumnSeries};
 export const TooltipService: ValueProvider = { provide: Tooltip, useValue: Tooltip};
 export const CrosshairService: ValueProvider = { provide: Crosshair, useValue: Crosshair};
 export const CategoryService: ValueProvider = { provide: Category, useValue: Category};
