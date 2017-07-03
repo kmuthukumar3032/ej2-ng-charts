@@ -34,7 +34,7 @@ export class SeriesDirective extends ComplexBase<SeriesDirective> {
     */
     public border: any;
     /** 
-    * The dashArray of the series.     * @default null
+    * The dashArray of the series.     * @default '0'
     */
     public dashArray: any;
     /** 
