@@ -3,7 +3,7 @@ import { ComplexBase, ArrayBase } from '@syncfusion/ej2-ng-base';
 
 
 
-let input: string[] = ['animation', 'border', 'dashArray', 'dataSource', 'enableTooltip', 'fill', 'high', 'legendShape', 'low', 'marker', 'name', 'opacity', 'query', 'selectionStyle', 'stackingGroup', 'type', 'visible', 'width', 'xAxisName', 'xName', 'yAxisName', 'yName'];
+let input: string[] = ['animation', 'border', 'dashArray', 'dataSource', 'enableTooltip', 'fill', 'high', 'legendShape', 'low', 'marker', 'maxRadius', 'minRadius', 'name', 'opacity', 'query', 'selectionStyle', 'size', 'stackingGroup', 'type', 'visible', 'width', 'xAxisName', 'xName', 'yAxisName', 'yName'];
 
 /**
  * Series Directive
@@ -66,6 +66,14 @@ export class SeriesDirective extends ComplexBase<SeriesDirective> {
     */
     public marker: any;
     /** 
+    * maximum radius
+    */
+    public maxRadius: any;
+    /** 
+    * minimum radius
+    */
+    public minRadius: any;
+    /** 
     * The name of the series which is visible in legend.     * @default ''
     */
     public name: any;
@@ -81,6 +89,10 @@ export class SeriesDirective extends ComplexBase<SeriesDirective> {
     * Custom style for the selected series or points.     * @default null
     */
     public selectionStyle: any;
+    /** 
+    * The DataSource field which contains the size value for bubble series     * @default ''
+    */
+    public size: any;
     /** 
     * This property allows grouping series in a `stacked column / bar` charts.     * Any string value can be provided to the stackingGroup property.     * If any two or above series has the same value, those series will be grouped together.     * @default ''
     */
