@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewContainerRef, ChangeDetectionStrategy, ValueProvider, ContentChild, Optional } from '@angular/core';
-import { ComponentBase, IComponentBase, applyMixins, PropertyCollectionInfo } from '@syncfusion/ej2-ng-base';
-import { getValue } from '@syncfusion/ej2-base/util';
+import { ComponentBase, IComponentBase, applyMixins, PropertyCollectionInfo, setValue } from '@syncfusion/ej2-ng-base';
 import { Chart, LineSeries, ScatterSeries, ColumnSeries, SplineSeries, AreaSeries, StepLineSeries, StackingColumnSeries, StackingAreaSeries, BarSeries, StackingBarSeries, RangeColumnSeries, BubbleSeries, Tooltip, Crosshair, Category, DateTime, Logarithmic, Marker, Legend, Zoom, DataLabel, Selection } from '@syncfusion/ej2-charts';
 
 import { SeriesCollectionDirective } from './series.directive';
@@ -51,6 +50,7 @@ export class ChartComponent extends Chart implements IComponentBase {
         }
         this.registerEvents(outputs);
         this.addTwoWay.call(this, twoWays);
+        setValue('currentInstance', this, this.viewContainerRef);
     }
 
     public ngOnInit() {

@@ -1,5 +1,5 @@
 import { Directive, ViewContainerRef, ContentChildren } from '@angular/core';
-import { ComplexBase, ArrayBase } from '@syncfusion/ej2-ng-base';
+import { ComplexBase, ArrayBase, setValue } from '@syncfusion/ej2-ng-base';
 
 
 
@@ -32,6 +32,7 @@ export class ColumnDirective extends ComplexBase<ColumnDirective> {
 
     constructor(private viewContainerRef:ViewContainerRef) {
         super();
+        setValue('currentInstance', this, this.viewContainerRef);
     }
 }
 

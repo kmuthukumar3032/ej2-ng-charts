@@ -1,5 +1,5 @@
 import { Directive, ViewContainerRef, ContentChildren } from '@angular/core';
-import { ComplexBase, ArrayBase } from '@syncfusion/ej2-ng-base';
+import { ComplexBase, ArrayBase, setValue } from '@syncfusion/ej2-ng-base';
 
 
 
@@ -168,6 +168,7 @@ export class AxisDirective extends ComplexBase<AxisDirective> {
 
     constructor(private viewContainerRef:ViewContainerRef) {
         super();
+        setValue('currentInstance', this, this.viewContainerRef);
     }
 }
 
