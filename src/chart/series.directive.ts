@@ -8,7 +8,9 @@ let input: string[] = ['animation', 'border', 'dashArray', 'dataSource', 'enable
 /**
  * Series Directive
  * ```html
+ * <e-series-collection>
  * <e-series></e-series>
+ * </e-series-collection>
  * ```
  */
 @Directive({

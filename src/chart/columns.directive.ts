@@ -8,7 +8,7 @@ let input: string[] = ['border', 'width'];
 /**
  * Column Directive
  * ```html
- * <e-column></e-column>
+ * <e-columns><e-column></e-column><e-columns>
  * ```
  */
 @Directive({

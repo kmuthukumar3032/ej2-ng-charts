@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewContainerRef, ChangeDetectionStrategy, ValueProvider, ContentChild, Optional } from '@angular/core';
 import { ComponentBase, IComponentBase, applyMixins, PropertyCollectionInfo, setValue } from '@syncfusion/ej2-ng-base';
-import { Chart, LineSeries, ScatterSeries, ColumnSeries, SplineSeries, AreaSeries, StepLineSeries, StackingColumnSeries, StackingAreaSeries, BarSeries, StackingBarSeries, RangeColumnSeries, BubbleSeries, Tooltip, Crosshair, Category, DateTime, Logarithmic, Marker, Legend, Zoom, DataLabel, Selection } from '@syncfusion/ej2-charts';
+import { Chart, LineSeries, ScatterSeries, ColumnSeries, SplineSeries, BubbleSeries, AreaSeries, StepLineSeries, StackingColumnSeries, StackingAreaSeries, BarSeries, StackingBarSeries, RangeColumnSeries, Tooltip, Crosshair, Category, DateTime, Logarithmic, Marker, Legend, Zoom, DataLabel, Selection } from '@syncfusion/ej2-charts';
 
 import { SeriesCollectionDirective } from './series.directive';
 import { AxesDirective } from './axes.directive';
@@ -38,7 +38,7 @@ export class ChartComponent extends Chart implements IComponentBase {
     public tags: string[] = ['series', 'axes', 'rows', 'columns'];
 
 
-    constructor(private ngEle: ElementRef, private viewContainerRef:ViewContainerRef, @Optional() lineSeries: LineSeries, @Optional() scatterSeries: ScatterSeries, @Optional() columnSeries: ColumnSeries, @Optional() splineSeries: SplineSeries, @Optional() areaSeries: AreaSeries, @Optional() stepLineSeries: StepLineSeries, @Optional() stackingColumnSeries: StackingColumnSeries, @Optional() stackingAreaSeries: StackingAreaSeries, @Optional() barSeries: BarSeries, @Optional() stackingBarSeries: StackingBarSeries, @Optional() rangeColumnSeries: RangeColumnSeries, @Optional() bubbleSeries: BubbleSeries, @Optional() tooltip: Tooltip, @Optional() crosshair: Crosshair, @Optional() category: Category, @Optional() dateTime: DateTime, @Optional() logarithmic: Logarithmic, @Optional() marker: Marker, @Optional() legend: Legend, @Optional() zoom: Zoom, @Optional() dataLabel: DataLabel, @Optional() selection: Selection) {
+    constructor(private ngEle: ElementRef, private viewContainerRef:ViewContainerRef, @Optional() lineSeries: LineSeries, @Optional() scatterSeries: ScatterSeries, @Optional() columnSeries: ColumnSeries, @Optional() splineSeries: SplineSeries, @Optional() bubbleSeries: BubbleSeries, @Optional() areaSeries: AreaSeries, @Optional() stepLineSeries: StepLineSeries, @Optional() stackingColumnSeries: StackingColumnSeries, @Optional() stackingAreaSeries: StackingAreaSeries, @Optional() barSeries: BarSeries, @Optional() stackingBarSeries: StackingBarSeries, @Optional() rangeColumnSeries: RangeColumnSeries, @Optional() tooltip: Tooltip, @Optional() crosshair: Crosshair, @Optional() category: Category, @Optional() dateTime: DateTime, @Optional() logarithmic: Logarithmic, @Optional() marker: Marker, @Optional() legend: Legend, @Optional() zoom: Zoom, @Optional() dataLabel: DataLabel, @Optional() selection: Selection) {
         super();
         this.element = this.ngEle.nativeElement;
         this.injectedModules = this.injectedModules || [];
@@ -75,6 +75,7 @@ export const LineSeriesService: ValueProvider = { provide: LineSeries, useValue:
 export const ScatterSeriesService: ValueProvider = { provide: ScatterSeries, useValue: ScatterSeries};
 export const ColumnSeriesService: ValueProvider = { provide: ColumnSeries, useValue: ColumnSeries};
 export const SplineSeriesService: ValueProvider = { provide: SplineSeries, useValue: SplineSeries};
+export const BubbleSeriesService: ValueProvider = { provide: BubbleSeries, useValue: BubbleSeries};
 export const AreaSeriesService: ValueProvider = { provide: AreaSeries, useValue: AreaSeries};
 export const StepLineSeriesService: ValueProvider = { provide: StepLineSeries, useValue: StepLineSeries};
 export const StackingColumnSeriesService: ValueProvider = { provide: StackingColumnSeries, useValue: StackingColumnSeries};
@@ -82,7 +83,6 @@ export const StackingAreaSeriesService: ValueProvider = { provide: StackingAreaS
 export const BarSeriesService: ValueProvider = { provide: BarSeries, useValue: BarSeries};
 export const StackingBarSeriesService: ValueProvider = { provide: StackingBarSeries, useValue: StackingBarSeries};
 export const RangeColumnSeriesService: ValueProvider = { provide: RangeColumnSeries, useValue: RangeColumnSeries};
-export const BubbleSeriesService: ValueProvider = { provide: BubbleSeries, useValue: BubbleSeries};
 export const TooltipService: ValueProvider = { provide: Tooltip, useValue: Tooltip};
 export const CrosshairService: ValueProvider = { provide: Crosshair, useValue: Crosshair};
 export const CategoryService: ValueProvider = { provide: Category, useValue: Category};

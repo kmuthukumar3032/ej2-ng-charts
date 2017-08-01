@@ -8,7 +8,7 @@ let input: string[] = ['columnIndex', 'crosshairTooltip', 'description', 'desire
 /**
  * Axis Directive
  * ```html
- * <e-axis></e-axis>
+ * <e-axes><e-axis></e-axis></e-axes>
  * ```
  */
 @Directive({

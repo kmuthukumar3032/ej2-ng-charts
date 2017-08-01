@@ -8,7 +8,7 @@ let input: string[] = ['border', 'height'];
 /**
  * Row Directive
  * ```html
- * <e-row></e-row>
+ * <e-rows><e-row></e-row><e-rows>
  * ```
  */
 @Directive({
