@@ -1,7 +1,7 @@
 {
 	"name": "@syncfusion/ej2-ng-charts",
 	"version": "1.0.10",
-	"description": "Chart Components",
+	"description": "Essential JS 2 Chart Components for Angular",
 	"author": "Syncfusion Inc.",
 	"license": "SEE LICENSE IN license",
 	"dependencies": {
