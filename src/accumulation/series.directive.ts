@@ -3,7 +3,7 @@ import { ComplexBase, ArrayBase, setValue } from '@syncfusion/ej2-ng-base';
 
 
 
-let input: string[] = ['animation', 'border', 'clubbingValue', 'dataLabel', 'dataSource', 'enableTooltip', 'endAngle', 'explode', 'explodeAll', 'explodeIndex', 'explodeOffset', 'innerRadius', 'legendShape', 'name', 'palettes', 'query', 'radius', 'selectionStyle', 'startAngle', 'type', 'visible', 'xName', 'yName'];
+let input: string[] = ['animation', 'border', 'dataLabel', 'dataSource', 'enableTooltip', 'endAngle', 'explode', 'explodeAll', 'explodeIndex', 'explodeOffset', 'groupTo', 'innerRadius', 'legendShape', 'name', 'palettes', 'query', 'radius', 'selectionStyle', 'startAngle', 'type', 'visible', 'xName', 'yName'];
 
 /**
  * AccumulationSeries Directive
@@ -36,11 +36,6 @@ export class AccumulationSeriesDirective extends ComplexBase<AccumulationSeriesD
      * Options for customizing the border of the series.
      */
     public border: any;
-    /** 
-     * AccumulationSeries y values less than clubbingValue are combined into single slice named others
-     * @default null
-     */
-    public clubbingValue: any;
     /** 
      * The data label for the series.
      */
@@ -80,6 +75,11 @@ export class AccumulationSeriesDirective extends ComplexBase<AccumulationSeriesD
      * @default '30%'
      */
     public explodeOffset: any;
+    /** 
+     * AccumulationSeries y values less than groupTo are combined into single slice named others
+     * @default null
+     */
+    public groupTo: any;
     /** 
      * When the innerRadius value is greater than 0 percentage, a donut will appear in pie series. It takes values only in percentage.
      * @default '0'

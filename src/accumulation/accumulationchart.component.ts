@@ -5,7 +5,7 @@ import { AccumulationChart, PieSeries, AccumulationTooltip, AccumulationLegend, 
 import { AccumulationSeriesCollectionDirective } from './series.directive';
 
 export const inputs: string[] = ['background','border','enablePersistence','enableRtl','enableSmartLabels','height','isMultiSelect','legendSettings','locale','margin','selectedDataIndexes','selectionMode','series','theme','title','titleStyle','tooltip','width'];
-export const outputs: string[] = ['animationComplete','chartMouseClick','chartMouseDown','chartMouseLeave','chartMouseMove','chartMouseUp','legendRender','load','loaded','pointRender','seriesRender','textRender','tooltipRender'];
+export const outputs: string[] = ['animationComplete','chartMouseClick','chartMouseDown','chartMouseLeave','chartMouseMove','chartMouseUp','legendRender','load','loaded','pointRender','resized','seriesRender','textRender','tooltipRender'];
 export const twoWays: string[] = [''];
 
 /**
