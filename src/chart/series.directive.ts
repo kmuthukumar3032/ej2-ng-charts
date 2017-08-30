@@ -127,7 +127,7 @@ export class SeriesDirective extends ComplexBase<SeriesDirective> {
      */
     public selectionStyle: any;
     /** 
-     * The DataSource field which contains the size value for bubble series
+     * The DataSource field which contains the size value of y
      * @default ''
      */
     public size: any;
