@@ -7,7 +7,7 @@ export { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesSe
 export { ChartModule } from './chart/chart.module';
 export { ChartAllModule } from './chart/chart-all.module';
 export * from '@syncfusion/ej2-charts';
-export {AccumulationSeriesDirective,AccumulationSeriesCollectionDirective} from './accumulation/series.directive';
-export { AccumulationChartComponent, PieSeriesService, AccumulationTooltipService, AccumulationLegendService, AccumulationSelectionService, AccumulationDataLabelService} from './accumulation/accumulationchart.component';
-export { AccumulationChartModule } from './accumulation/accumulationchart.module';
-export { AccumulationChartAllModule } from './accumulation/accumulationchart-all.module';
+export {AccumulationSeriesDirective,AccumulationSeriesCollectionDirective} from './accumulation-chart/series.directive';
+export { AccumulationChartComponent, PieSeriesService, AccumulationTooltipService, AccumulationLegendService, AccumulationSelectionService, AccumulationDataLabelService} from './accumulation-chart/accumulationchart.component';
+export { AccumulationChartModule } from './accumulation-chart/accumulationchart.module';
+export { AccumulationChartAllModule } from './accumulation-chart/accumulationchart-all.module';
