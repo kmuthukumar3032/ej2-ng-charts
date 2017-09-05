@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewContainerRef, ChangeDetectionStrategy, ValueProvider, ContentChild, Optional } from '@angular/core';
 import { ComponentBase, IComponentBase, applyMixins, PropertyCollectionInfo, setValue } from '@syncfusion/ej2-ng-base';
-import { Chart, LineSeries, ScatterSeries, ColumnSeries, SplineSeries, AreaSeries, StepLineSeries, StackingColumnSeries, StackingAreaSeries, BarSeries, StackingBarSeries, RangeColumnSeries, BubbleSeries, Tooltip, Crosshair, Category, DateTime, Logarithmic, Marker, Legend, Zoom, DataLabel, Selection } from '@syncfusion/ej2-charts';
+import { Chart, LineSeries, ScatterSeries, ColumnSeries, SplineSeries, AreaSeries, StepLineSeries, StepAreaSeries, StackingColumnSeries, StackingAreaSeries, BarSeries, StackingBarSeries, RangeColumnSeries, BubbleSeries, Tooltip, Crosshair, Category, DateTime, Logarithmic, Marker, Legend, Zoom, DataLabel, Selection } from '@syncfusion/ej2-charts';
 
 import { SeriesCollectionDirective } from './series.directive';
 import { AxesDirective } from './axes.directive';
@@ -38,7 +38,7 @@ export class ChartComponent extends Chart implements IComponentBase {
     public tags: string[] = ['series', 'axes', 'rows', 'columns'];
 
 
-    constructor(private ngEle: ElementRef, private viewContainerRef:ViewContainerRef, @Optional() lineSeries: LineSeries, @Optional() scatterSeries: ScatterSeries, @Optional() columnSeries: ColumnSeries, @Optional() splineSeries: SplineSeries, @Optional() areaSeries: AreaSeries, @Optional() stepLineSeries: StepLineSeries, @Optional() stackingColumnSeries: StackingColumnSeries, @Optional() stackingAreaSeries: StackingAreaSeries, @Optional() barSeries: BarSeries, @Optional() stackingBarSeries: StackingBarSeries, @Optional() rangeColumnSeries: RangeColumnSeries, @Optional() bubbleSeries: BubbleSeries, @Optional() tooltip: Tooltip, @Optional() crosshair: Crosshair, @Optional() category: Category, @Optional() dateTime: DateTime, @Optional() logarithmic: Logarithmic, @Optional() marker: Marker, @Optional() legend: Legend, @Optional() zoom: Zoom, @Optional() dataLabel: DataLabel, @Optional() selection: Selection) {
+    constructor(private ngEle: ElementRef, private viewContainerRef:ViewContainerRef, @Optional() lineSeries: LineSeries, @Optional() scatterSeries: ScatterSeries, @Optional() columnSeries: ColumnSeries, @Optional() splineSeries: SplineSeries, @Optional() areaSeries: AreaSeries, @Optional() stepLineSeries: StepLineSeries, @Optional() stepAreaSeries: StepAreaSeries, @Optional() stackingColumnSeries: StackingColumnSeries, @Optional() stackingAreaSeries: StackingAreaSeries, @Optional() barSeries: BarSeries, @Optional() stackingBarSeries: StackingBarSeries, @Optional() rangeColumnSeries: RangeColumnSeries, @Optional() bubbleSeries: BubbleSeries, @Optional() tooltip: Tooltip, @Optional() crosshair: Crosshair, @Optional() category: Category, @Optional() dateTime: DateTime, @Optional() logarithmic: Logarithmic, @Optional() marker: Marker, @Optional() legend: Legend, @Optional() zoom: Zoom, @Optional() dataLabel: DataLabel, @Optional() selection: Selection) {
         super();
         this.element = this.ngEle.nativeElement;
         this.injectedModules = this.injectedModules || [];
@@ -77,6 +77,7 @@ export const ColumnSeriesService: ValueProvider = { provide: ColumnSeries, useVa
 export const SplineSeriesService: ValueProvider = { provide: SplineSeries, useValue: SplineSeries};
 export const AreaSeriesService: ValueProvider = { provide: AreaSeries, useValue: AreaSeries};
 export const StepLineSeriesService: ValueProvider = { provide: StepLineSeries, useValue: StepLineSeries};
+export const StepAreaSeriesService: ValueProvider = { provide: StepAreaSeries, useValue: StepAreaSeries};
 export const StackingColumnSeriesService: ValueProvider = { provide: StackingColumnSeries, useValue: StackingColumnSeries};
 export const StackingAreaSeriesService: ValueProvider = { provide: StackingAreaSeries, useValue: StackingAreaSeries};
 export const BarSeriesService: ValueProvider = { provide: BarSeries, useValue: BarSeries};
