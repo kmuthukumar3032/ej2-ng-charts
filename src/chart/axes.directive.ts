@@ -3,7 +3,7 @@ import { ComplexBase, ArrayBase, setValue } from '@syncfusion/ej2-ng-base';
 
 
 
-let input: string[] = ['columnIndex', 'crosshairTooltip', 'description', 'desiredIntervals', 'edgeLabelPlacement', 'enableAutoIntervalOnZooming', 'interval', 'intervalType', 'labelFormat', 'labelIntersectAction', 'labelPlacement', 'labelRotation', 'labelStyle', 'lineStyle', 'logBase', 'majorGridLines', 'majorTickLines', 'maximum', 'maximumLabels', 'minimum', 'minorGridLines', 'minorTickLines', 'minorTicksPerInterval', 'name', 'opposedPosition', 'plotOffset', 'rangePadding', 'rowIndex', 'span', 'tabIndex', 'title', 'titleStyle', 'valueType', 'visible', 'zoomFactor', 'zoomPosition'];
+let input: string[] = ['columnIndex', 'crosshairTooltip', 'description', 'desiredIntervals', 'edgeLabelPlacement', 'enableAutoIntervalOnZooming', 'interval', 'intervalType', 'isInversed', 'labelFormat', 'labelIntersectAction', 'labelPlacement', 'labelRotation', 'labelStyle', 'lineStyle', 'logBase', 'majorGridLines', 'majorTickLines', 'maximum', 'maximumLabels', 'minimum', 'minorGridLines', 'minorTickLines', 'minorTicksPerInterval', 'name', 'opposedPosition', 'plotOffset', 'rangePadding', 'rowIndex', 'span', 'tabIndex', 'title', 'titleStyle', 'valueType', 'visible', 'zoomFactor', 'zoomPosition'];
 
 /**
  * Axis Directive
@@ -71,6 +71,11 @@ export class AxisDirective extends ComplexBase<AxisDirective> {
      * @default 'Auto'
      */
     public intervalType: any;
+    /** 
+     * It specifies whether the axis to be rendered in inversed manner or not.
+     * @default false
+     */
+    public isInversed: any;
     /** 
      * To format the axis label, which accepts any global string format like 'C', 'n1', 'P' etc. 
      * Also accepts placeholder like '{value}°C' in which value represent the axis label e.g. 20°C.
