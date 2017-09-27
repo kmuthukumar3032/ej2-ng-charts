@@ -3,7 +3,7 @@ import { ComponentBase, IComponentBase, applyMixins, PropertyCollectionInfo, set
 import { AccumulationChart, PieSeries, AccumulationTooltip, AccumulationLegend, AccumulationSelection, AccumulationDataLabel, AccumulationAnnotation } from '@syncfusion/ej2-charts';
 
 import { AccumulationSeriesCollectionDirective } from './series.directive';
-import { AccumulationAnnotationCollectionDirective } from './annotations.directive';
+import { AccumulationAnnotationsDirective } from './annotations.directive';
 
 export const inputs: string[] = ['annotations','background','border','enablePersistence','enableRtl','enableSmartLabels','height','isMultiSelect','legendSettings','locale','margin','selectedDataIndexes','selectionMode','series','theme','title','titleStyle','tooltip','width'];
 export const outputs: string[] = ['animationComplete','annotationRender','chartMouseClick','chartMouseDown','chartMouseLeave','chartMouseMove','chartMouseUp','legendRender','load','loaded','pointRender','resized','seriesRender','textRender','tooltipRender'];
@@ -23,7 +23,7 @@ export const twoWays: string[] = [''];
     changeDetection: ChangeDetectionStrategy.OnPush,
     queries: {
         childSeries: new ContentChild(AccumulationSeriesCollectionDirective), 
-        childAnnotations: new ContentChild(AccumulationAnnotationCollectionDirective)
+        childAnnotations: new ContentChild(AccumulationAnnotationsDirective)
     }
 })
 export class AccumulationChartComponent extends AccumulationChart implements IComponentBase {

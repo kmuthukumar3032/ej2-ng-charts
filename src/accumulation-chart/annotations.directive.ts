@@ -8,13 +8,13 @@ let input: string[] = ['content', 'coordinateUnits', 'description', 'horizontalA
 /**
  * AccumulationAnnotations Directive
  * ```html
- * <e-accumulation-annotation-collection>
+ * <e-accumulation-annotations>
  * <e-accumulation-annotation></e-accumulation-annotation>
- * </e-accumulation-annotation-collection>
+ * </e-accumulation-annotations>
  * ```
  */
 @Directive({
-    selector: 'e-accumulation-annotation-collection>e-accumulation-annotation',
+    selector: 'e-accumulation-annotations>e-accumulation-annotation',
     inputs: input,
     queries: {
 
@@ -87,12 +87,12 @@ export class AccumulationAnnotationDirective extends ComplexBase<AccumulationAnn
  * @private
  */
 @Directive({
-    selector: 'ej-accumulationchart>e-accumulation-annotation-collection',
+    selector: 'ej-accumulationchart>e-accumulation-annotations',
     queries: {
         children: new ContentChildren(AccumulationAnnotationDirective)
     },
 })
-export class AccumulationAnnotationCollectionDirective extends ArrayBase<AccumulationAnnotationCollectionDirective> {
+export class AccumulationAnnotationsDirective extends ArrayBase<AccumulationAnnotationsDirective> {
     constructor() {
         super('annotations');
     }

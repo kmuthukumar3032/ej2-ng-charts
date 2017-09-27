@@ -9,7 +9,7 @@ export { ChartModule } from './chart/chart.module';
 export { ChartAllModule } from './chart/chart-all.module';
 export * from '@syncfusion/ej2-charts';
 export {AccumulationSeriesDirective,AccumulationSeriesCollectionDirective} from './accumulation-chart/series.directive';
-export {AccumulationAnnotationDirective,AccumulationAnnotationCollectionDirective} from './accumulation-chart/annotations.directive';
+export {AccumulationAnnotationDirective,AccumulationAnnotationsDirective} from './accumulation-chart/annotations.directive';
 export { AccumulationChartComponent, PieSeriesService, AccumulationTooltipService, AccumulationLegendService, AccumulationSelectionService, AccumulationDataLabelService, AccumulationAnnotationService} from './accumulation-chart/accumulationchart.component';
 export { AccumulationChartModule } from './accumulation-chart/accumulationchart.module';
 export { AccumulationChartAllModule } from './accumulation-chart/accumulationchart-all.module';
