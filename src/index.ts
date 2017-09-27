@@ -3,11 +3,13 @@ export {SeriesDirective,SeriesCollectionDirective} from './chart/series.directiv
 export {AxisDirective,AxesDirective} from './chart/axes.directive';
 export {RowDirective,RowsDirective} from './chart/rows.directive';
 export {ColumnDirective,ColumnsDirective} from './chart/columns.directive';
-export { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesService, SplineSeriesService, AreaSeriesService, StepLineSeriesService, StepAreaSeriesService, StackingColumnSeriesService, StackingAreaSeriesService, BarSeriesService, StackingBarSeriesService, RangeColumnSeriesService, BubbleSeriesService, TooltipService, CrosshairService, CategoryService, DateTimeService, LogarithmicService, MarkerService, LegendService, ZoomService, DataLabelService, SelectionService} from './chart/chart.component';
+export {AnnotationDirective,AnnotationsDirective} from './chart/annotations.directive';
+export { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesService, SplineSeriesService, AreaSeriesService, StepLineSeriesService, StepAreaSeriesService, StackingColumnSeriesService, StackingAreaSeriesService, BarSeriesService, StackingBarSeriesService, RangeColumnSeriesService, BubbleSeriesService, TooltipService, CrosshairService, CategoryService, DateTimeService, LogarithmicService, MarkerService, LegendService, ZoomService, DataLabelService, SelectionService, ChartAnnotationService} from './chart/chart.component';
 export { ChartModule } from './chart/chart.module';
 export { ChartAllModule } from './chart/chart-all.module';
 export * from '@syncfusion/ej2-charts';
 export {AccumulationSeriesDirective,AccumulationSeriesCollectionDirective} from './accumulation-chart/series.directive';
-export { AccumulationChartComponent, PieSeriesService, AccumulationTooltipService, AccumulationLegendService, AccumulationSelectionService, AccumulationDataLabelService} from './accumulation-chart/accumulationchart.component';
+export {AccumulationAnnotationDirective,AccumulationAnnotationCollectionDirective} from './accumulation-chart/annotations.directive';
+export { AccumulationChartComponent, PieSeriesService, AccumulationTooltipService, AccumulationLegendService, AccumulationSelectionService, AccumulationDataLabelService, AccumulationAnnotationService} from './accumulation-chart/accumulationchart.component';
 export { AccumulationChartModule } from './accumulation-chart/accumulationchart.module';
 export { AccumulationChartAllModule } from './accumulation-chart/accumulationchart-all.module';
