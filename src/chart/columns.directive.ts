@@ -22,13 +22,13 @@ export class ColumnDirective extends ComplexBase<ColumnDirective> {
 
 
     /** 
-     * Options to customize the border of the column.
+     * Options to customize the border of the columns.
      */
     public border: any;
     /** 
-     * The width of the column as a string in order to provide input as both like '100px' or '100%'. 
-     * If specified as '100%, column will render to the full width of its chart.
-     * @default 100%
+     * The width of the column as a string accepts input both as like '100px' or '100%'. 
+     * If specified as '100%, column renders to the full width of its chart.
+     * @default 100%.
      */
     public width: any;
 

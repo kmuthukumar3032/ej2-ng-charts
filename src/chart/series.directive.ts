@@ -1,9 +1,9 @@
-import { Directive, ViewContainerRef, ContentChildren } from '@angular/core';
+import { Directive, ViewContainerRef, ContentChildren, ContentChild } from '@angular/core';
 import { ComplexBase, ArrayBase, setValue } from '@syncfusion/ej2-ng-base';
 
+import { TrendlinesDirective } from './trendlines.directive';
 
-
-let input: string[] = ['animation', 'border', 'dashArray', 'dataSource', 'enableTooltip', 'fill', 'high', 'legendShape', 'low', 'marker', 'maxRadius', 'minRadius', 'name', 'opacity', 'query', 'selectionStyle', 'size', 'stackingGroup', 'type', 'visible', 'width', 'xAxisName', 'xName', 'yAxisName', 'yName'];
+let input: string[] = ['animation', 'bearFillColor', 'border', 'boxPlotMode', 'bullFillColor', 'cardinalSplineTension', 'close', 'columnSpacing', 'columnWidth', 'connector', 'cornerRadius', 'dashArray', 'dataSource', 'drawType', 'emptyPointSettings', 'enableSolidCandles', 'enableTooltip', 'errorBar', 'fill', 'high', 'intermediateSumIndexes', 'isClosed', 'legendShape', 'low', 'marker', 'maxRadius', 'minRadius', 'name', 'negativeFillColor', 'opacity', 'open', 'query', 'selectionStyle', 'showMean', 'size', 'splineType', 'stackingGroup', 'sumIndexes', 'summaryFillColor', 'trendlines', 'type', 'visible', 'volume', 'width', 'xAxisName', 'xName', 'yAxisName', 'yName'];
 
 /**
  * Series Directive
@@ -17,108 +17,208 @@ let input: string[] = ['animation', 'border', 'dashArray', 'dataSource', 'enable
     selector: 'e-series-collection>e-series',
     inputs: input,
     queries: {
-
+        childTrendlines: new ContentChild(TrendlinesDirective)
     }
 })
 export class SeriesDirective extends ComplexBase<SeriesDirective> {
-
-
+    public childTrendlines: any;
+    public tags: string[] = ['trendlines'];
     /** 
-     * The type of the series. They are 
-     * * line - Renders the line series. 
-     * * column - Renders the column series. 
-     * * area - Renders the area series. 
-     * * pie - Renders the pie series. 
-     * * polar - Renders the polar series. 
-     * * bar - Renders the stacking column series 
-     * * stackingColumn - Renders the stacking column series. 
-     * * stackingArea - Renders the stacking area series 
-     * * stackingBar - Renders the stacking bar series. 
-     * * stepLine -  Renders the step line series. 
-     * * scatter - Renders the scatter series. 
-     * * spline - Renders the spline series
-     * @default 'Line'
+     * The type of the series are 
+     * * Line 
+     * * Column 
+     * * Area 
+     * * Bar 
+     * * StackingColumn 
+     * * StackingArea 
+     * * StackingBar 
+     * * StepLine 
+     * * StepArea 
+     * * Scatter 
+     * * Spline 
+     * * StackingColumn100 
+     * * StackingBar100 
+     * * StackingArea100 
+     * * RangeColumn 
+     * * Hilo 
+     * * HiloOpenClose 
+     * * Waterfall 
+     * * RangeArea 
+     * * Bubble 
+     * * Candle 
+     * * Polar 
+     * * Radar 
+     * * BoxAndWhisker
+     * @default 'Line'.
      */
     public type: any;
     /** 
-     * Options for customizing the animation for series.
+     * Options to customizing animation for the series.
      */
     public animation: any;
     /** 
-     * Options for customizing the border of the series. Applicable only for `Column`, `Bar` type series.
+     * This property is used in financial charts to visualize the price movements in stock. 
+     * It defines the color of the candle/point, when the opening price is less than the closing price.
+     */
+    public bearFillColor: any;
+    /** 
+     * Options to customizing the border of the series. This is applicable only for `Column` and `Bar` type series.
      */
     public border: any;
     /** 
-     * The dashArray of the series.
-     * @default '0'
+     * The mode of the box and whisker char series. They are, 
+     * Exclusive 
+     * Inclusive 
+     * Normal
+     */
+    public boxPlotMode: any;
+    /** 
+     * This property is used in financial charts to visualize the price movements in stock. 
+     * It defines the color of the candle/point, when the opening price is higher than the closing price.
+     */
+    public bullFillColor: any;
+    /** 
+     * It defines tension of cardinal spline types
+     */
+    public cardinalSplineTension: any;
+    /** 
+     * The DataSource field that contains the close value of y 
+     * It is applicable for series and technical indicators
+     * @default ''.
+     */
+    public close: any;
+    /** 
+     * To render the column series points with particular column spacing. It takes value from 0 - 1.
+     */
+    public columnSpacing: any;
+    /** 
+     * To render the column series points with particular column width.
+     */
+    public columnWidth: any;
+    /** 
+     * Defines the appearance of line connecting adjacent points in waterfall charts.
+     */
+    public connector: any;
+    /** 
+     * To render the column series points with particular rounded corner.
+     */
+    public cornerRadius: any;
+    /** 
+     * Defines the pattern of dashes and gaps to stroke the lines in `Line` type series.
+     * @default '0'.
      */
     public dashArray: any;
     /** 
-     * Specifies the dataSource for the series. It can be an array of JSON objects or an instance of DataManager. 
+     * Specifies the DataSource for the series. It can be an array of JSON objects or an instance of DataManager. 
      * 
      * @default ''
      */
     public dataSource: any;
     /** 
-     * If set true, the tooltip for series will be visible.
-     * @default true
+     * Type of series to be drawn in radar or polar series. They are 
+     *  'Line' 
+     *  'Column' 
+     *  'Area'
+     * @default 'Line'
+     */
+    public drawType: any;
+    /** 
+     * options to customize the empty points in series
+     */
+    public emptyPointSettings: any;
+    /** 
+     * This property is applicable for candle series. 
+     * It enables/disables to visually compare the current values with the previous values in stock.
+     * @default false
+     */
+    public enableSolidCandles: any;
+    /** 
+     * If set true, the Tooltip for series will be visible.
+     * @default true.
      */
     public enableTooltip: any;
     /** 
-     * The fill color for the series, which accepts value in hex, rgba as a valid CSS color string.
-     * @default null
+     * Options for displaying and customizing error bar for individual point in a series.
+     */
+    public errorBar: any;
+    /** 
+     * The fill color for the series that accepts value in hex and rgba as a valid CSS color string. 
+     * It also represents the color of the signal lines in technical indicators. 
+     * For technical indicators, the default value is 'blue' and for series, it has null.
+     * @default null.
      */
     public fill: any;
     /** 
-     * The DataSource field which contains the high value of y
-     * @default ''
+     * The DataSource field that contains the high value of y 
+     * It is applicable for series and technical indicators
+     * @default ''.
      */
     public high: any;
     /** 
-     * The shape of the legend. Each series has its own legend shape. They are 
-     * * circle - Renders a circle. 
-     * * rectangle - Renders a rectangle. 
-     * * triangle - Renders a triangle. 
-     * * diamond - Renders a diamond. 
-     * * cross - Renders a cross. 
-     * * horizontalLine - Renders a horizontalLine. 
-     * * verticalLine - Renders a verticalLine. 
-     * * pentagon - Renders a pentagon. 
-     * * invertedTriangle - Renders a invertedTriangle. 
-     * * SeriesType -Render a legend shape based on series type.
-     * @default 'SeriesType'
+     * Defines the collection of indexes of the intermediate summary columns in waterfall charts.
+     */
+    public intermediateSumIndexes: any;
+    /** 
+     * Specifies whether to join start and end point of a line/area series used in polar/radar chart to form a closed path.
+     * @default true
+     */
+    public isClosed: any;
+    /** 
+     * The shape of the legend. Each series has its own legend shape. They are, 
+     * * Circle 
+     * * Rectangle 
+     * * Triangle 
+     * * Diamond 
+     * * Cross 
+     * * HorizontalLine 
+     * * VerticalLine 
+     * * Pentagon 
+     * * InvertedTriangle 
+     * * SeriesType
+     * @default 'SeriesType'.
      */
     public legendShape: any;
     /** 
-     * The DataSource field which contains the low value of y
-     * @default ''
+     * The DataSource field that contains the low value of y 
+     * It is applicable for series and technical indicators
+     * @default ''.
      */
     public low: any;
     /** 
-     * Options for displaying and customizing marker for individual point in a series.
+     * Options for displaying and customizing markers for individual points in a series.
      */
     public marker: any;
     /** 
-     * maximum radius
+     * Maximum radius
      */
     public maxRadius: any;
     /** 
-     * minimum radius
+     * Minimum radius
      */
     public minRadius: any;
     /** 
-     * The name of the series which is visible in legend.
-     * @default ''
+     * The name of the series visible in legend.
+     * @default ''.
      */
     public name: any;
     /** 
+     * Defines the visual representation of the negative changes in waterfall charts.
+     */
+    public negativeFillColor: any;
+    /** 
      * The opacity of the series.
-     * @default 1
+     * @default 1.
      */
     public opacity: any;
     /** 
-     * Specifies Query to select data from dataSource. This property is applicable only when the dataSource is `ej.DataManager`.
-     * @default null
+     * The DataSource field that contains the open value of y 
+     * It is applicable for series and technical indicators
+     * @default ''.
+     */
+    public open: any;
+    /** 
+     * Specifies query to select data from DataSource. This property is applicable only when the DataSource is `ej.DataManager`.
+     * @default null.
      */
     public query: any;
     /** 
@@ -127,47 +227,78 @@ export class SeriesDirective extends ComplexBase<SeriesDirective> {
      */
     public selectionStyle: any;
     /** 
-     * The DataSource field which contains the size value of y
-     * @default ''
+     * If set true, the mean value for box and whisker will be visible.
+     * @default true.
+     */
+    public showMean: any;
+    /** 
+     * The DataSource field that contains the size value of y
+     * @default ''.
      */
     public size: any;
     /** 
-     * This property allows grouping series in a `stacked column / bar` charts. 
+     * Defines type of spline to be rendered.
+     */
+    public splineType: any;
+    /** 
+     * This property allows grouping series in `stacked column / bar` charts. 
      * Any string value can be provided to the stackingGroup property. 
-     * If any two or above series has the same value, those series will be grouped together.
-     * @default ''
+     * If any two or above series have the same value, those series will be grouped together.
+     * @default ''.
      */
     public stackingGroup: any;
     /** 
-     * Specifies the series visibility.
-     * @default true
+     * Defines the collection of indexes of the overall summary columns in waterfall charts.
+     */
+    public sumIndexes: any;
+    /** 
+     * Defines the visual representation of the summaries in waterfall charts.
+     */
+    public summaryFillColor: any;
+    /** 
+     * Defines the collection of trendlines that are used to predict the trend
+     */
+    public trendlines: any;
+    /** 
+     * Specifies the visibility of series.
+     * @default true.
      */
     public visible: any;
     /** 
-     * The stroke width for the series, which is applicable only for `Line` type series.
-     * @default 1
+     * Defines the data source field that contains the volume value in candle charts 
+     * It is applicable for financial series and technical indicators
+     * @default ''
+     */
+    public volume: any;
+    /** 
+     * The stroke width for the series that is applicable only for `Line` type series. 
+     * It also represents the stroke width of the signal lines in technical indicators.
+     * @default 1.
      */
     public width: any;
     /** 
-     * The name of horizontal axis associated with the series. It requires `axes` of chart. 
+     * The name of the horizontal axis associated with the series. It requires `axes` of the chart. 
+     * It is applicable for series and technical indicators 
      * 
-     * @default null
+     * @default null.
      */
     public xAxisName: any;
     /** 
-     * The DataSource field which contains the x value.
-     * @default ''
+     * The DataSource field that contains the x value. 
+     * It is applicable for series and technical indicators
+     * @default ''.
      */
     public xName: any;
     /** 
-     * The name of vertical axis associated with the series. It requires `axes` of chart. 
+     * The name of the vertical axis associated with the series. It requires `axes` of the chart. 
+     * It is applicable for series and technical indicators 
      * 
-     * @default null
+     * @default null.
      */
     public yAxisName: any;
     /** 
-     * The DataSource field which contains the y value.
-     * @default ''
+     * The DataSource field that contains the y value.
+     * @default ''.
      */
     public yName: any;
 

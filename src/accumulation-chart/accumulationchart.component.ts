@@ -1,12 +1,12 @@
 import { Component, ElementRef, ViewContainerRef, ChangeDetectionStrategy, ValueProvider, ContentChild, Optional } from '@angular/core';
 import { ComponentBase, IComponentBase, applyMixins, PropertyCollectionInfo, setValue } from '@syncfusion/ej2-ng-base';
-import { AccumulationChart, PieSeries, AccumulationTooltip, AccumulationLegend, AccumulationSelection, AccumulationDataLabel, AccumulationAnnotation } from '@syncfusion/ej2-charts';
+import { AccumulationChart, PieSeries, FunnelSeries, PyramidSeries, AccumulationTooltip, AccumulationLegend, AccumulationSelection, AccumulationDataLabel, AccumulationAnnotation } from '@syncfusion/ej2-charts';
 
 import { AccumulationSeriesCollectionDirective } from './series.directive';
 import { AccumulationAnnotationsDirective } from './annotations.directive';
 
 export const inputs: string[] = ['annotations','background','border','enablePersistence','enableRtl','enableSmartLabels','height','isMultiSelect','legendSettings','locale','margin','selectedDataIndexes','selectionMode','series','theme','title','titleStyle','tooltip','width'];
-export const outputs: string[] = ['animationComplete','annotationRender','chartMouseClick','chartMouseDown','chartMouseLeave','chartMouseMove','chartMouseUp','legendRender','load','loaded','pointRender','resized','seriesRender','textRender','tooltipRender'];
+export const outputs: string[] = ['animationComplete','annotationRender','beforePrint','chartMouseClick','chartMouseDown','chartMouseLeave','chartMouseMove','chartMouseUp','legendRender','load','loaded','pointRender','resized','seriesRender','textRender','tooltipRender'];
 export const twoWays: string[] = [''];
 
 /**
@@ -32,7 +32,7 @@ export class AccumulationChartComponent extends AccumulationChart implements ICo
     public tags: string[] = ['series', 'annotations'];
 
 
-    constructor(private ngEle: ElementRef, private viewContainerRef:ViewContainerRef, @Optional() pieSeries: PieSeries, @Optional() accumulationTooltip: AccumulationTooltip, @Optional() accumulationLegend: AccumulationLegend, @Optional() accumulationSelection: AccumulationSelection, @Optional() accumulationDataLabel: AccumulationDataLabel, @Optional() accumulationAnnotation: AccumulationAnnotation) {
+    constructor(private ngEle: ElementRef, private viewContainerRef:ViewContainerRef, @Optional() pieSeries: PieSeries, @Optional() funnelSeries: FunnelSeries, @Optional() pyramidSeries: PyramidSeries, @Optional() accumulationTooltip: AccumulationTooltip, @Optional() accumulationLegend: AccumulationLegend, @Optional() accumulationSelection: AccumulationSelection, @Optional() accumulationDataLabel: AccumulationDataLabel, @Optional() accumulationAnnotation: AccumulationAnnotation) {
         super();
         this.element = this.ngEle.nativeElement;
         this.injectedModules = this.injectedModules || [];
@@ -66,6 +66,8 @@ export class AccumulationChartComponent extends AccumulationChart implements ICo
 applyMixins(AccumulationChartComponent, [ComponentBase]);
 
 export const PieSeriesService: ValueProvider = { provide: PieSeries, useValue: PieSeries};
+export const FunnelSeriesService: ValueProvider = { provide: FunnelSeries, useValue: FunnelSeries};
+export const PyramidSeriesService: ValueProvider = { provide: PyramidSeries, useValue: PyramidSeries};
 export const AccumulationTooltipService: ValueProvider = { provide: AccumulationTooltip, useValue: AccumulationTooltip};
 export const AccumulationLegendService: ValueProvider = { provide: AccumulationLegend, useValue: AccumulationLegend};
 export const AccumulationSelectionService: ValueProvider = { provide: AccumulationSelection, useValue: AccumulationSelection};

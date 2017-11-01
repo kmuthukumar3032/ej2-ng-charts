@@ -3,7 +3,7 @@ import { ComplexBase, ArrayBase, setValue } from '@syncfusion/ej2-ng-base';
 
 
 
-let input: string[] = ['animation', 'border', 'dataLabel', 'dataSource', 'enableTooltip', 'endAngle', 'explode', 'explodeAll', 'explodeIndex', 'explodeOffset', 'groupTo', 'innerRadius', 'legendShape', 'name', 'palettes', 'query', 'radius', 'selectionStyle', 'startAngle', 'type', 'visible', 'xName', 'yName'];
+let input: string[] = ['animation', 'border', 'dataLabel', 'dataSource', 'emptyPointSettings', 'enableTooltip', 'endAngle', 'explode', 'explodeAll', 'explodeIndex', 'explodeOffset', 'gapRatio', 'groupTo', 'height', 'innerRadius', 'legendShape', 'name', 'neckHeight', 'neckWidth', 'palettes', 'pyramidMode', 'query', 'radius', 'selectionStyle', 'startAngle', 'type', 'visible', 'width', 'xName', 'yName'];
 
 /**
  * AccumulationSeries Directive
@@ -47,6 +47,10 @@ export class AccumulationSeriesDirective extends ComplexBase<AccumulationSeriesD
      */
     public dataSource: any;
     /** 
+     * options to customize the empty points in series
+     */
+    public emptyPointSettings: any;
+    /** 
      * To enable or disable tooltip for a series.
      */
     public enableTooltip: any;
@@ -76,10 +80,18 @@ export class AccumulationSeriesDirective extends ComplexBase<AccumulationSeriesD
      */
     public explodeOffset: any;
     /** 
+     * Defines the distance between the segments of a funnel/pyramid series. The range will be from 0 to 1
+     */
+    public gapRatio: any;
+    /** 
      * AccumulationSeries y values less than groupTo are combined into single slice named others
      * @default null
      */
     public groupTo: any;
+    /** 
+     * Defines the height of the funnel/pyramid with respect to the chart area
+     */
+    public height: any;
     /** 
      * When the innerRadius value is greater than 0 percentage, a donut will appear in pie series. It takes values only in percentage.
      * @default '0'
@@ -106,10 +118,22 @@ export class AccumulationSeriesDirective extends ComplexBase<AccumulationSeriesD
      */
     public name: any;
     /** 
+     * Defines the height of the funnel neck with respect to the chart area
+     */
+    public neckHeight: any;
+    /** 
+     * Defines the width of the funnel neck with respect to the chart area
+     */
+    public neckWidth: any;
+    /** 
      * Palette for series points.
      * @default []
      */
     public palettes: any;
+    /** 
+     * Defines how the values have to be reflected, whether through height/surface of the segments
+     */
+    public pyramidMode: any;
     /** 
      * Specifies Query to select data from dataSource. This property is applicable only when the dataSource is `ej.DataManager`.
      * @default null
@@ -135,6 +159,10 @@ export class AccumulationSeriesDirective extends ComplexBase<AccumulationSeriesD
      * @default true
      */
     public visible: any;
+    /** 
+     * Defines the width of the funnel/pyramid with respect to the chart area
+     */
+    public width: any;
     /** 
      * The DataSource field which contains the x value.
      * @default ''

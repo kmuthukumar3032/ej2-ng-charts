@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccumulationSeriesDirective, AccumulationSeriesCollectionDirective } from './series.directive';
 import { AccumulationAnnotationDirective, AccumulationAnnotationsDirective } from './annotations.directive';
-import { AccumulationChartComponent, PieSeriesService, AccumulationTooltipService, AccumulationLegendService, AccumulationSelectionService, AccumulationDataLabelService, AccumulationAnnotationService } from './accumulationchart.component';
+import { AccumulationChartComponent, PieSeriesService, FunnelSeriesService, PyramidSeriesService, AccumulationTooltipService, AccumulationLegendService, AccumulationSelectionService, AccumulationDataLabelService, AccumulationAnnotationService } from './accumulationchart.component';
 import { AccumulationChartModule } from './accumulationchart.module';
 
 /**
@@ -15,6 +15,8 @@ import { AccumulationChartModule } from './accumulationchart.module';
     ],
     providers:[
         PieSeriesService,
+        FunnelSeriesService,
+        PyramidSeriesService,
         AccumulationTooltipService,
         AccumulationLegendService,
         AccumulationSelectionService,

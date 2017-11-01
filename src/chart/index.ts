@@ -1,8 +1,11 @@
+export {TrendlineDirective,TrendlinesDirective} from './trendlines.directive';
 export {SeriesDirective,SeriesCollectionDirective} from './series.directive';
+export {StripLineDirective,StripLinesDirective} from './striplines.directive';
 export {AxisDirective,AxesDirective} from './axes.directive';
 export {RowDirective,RowsDirective} from './rows.directive';
 export {ColumnDirective,ColumnsDirective} from './columns.directive';
 export {AnnotationDirective,AnnotationsDirective} from './annotations.directive';
-export { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesService, SplineSeriesService, AreaSeriesService, StepLineSeriesService, StepAreaSeriesService, StackingColumnSeriesService, StackingAreaSeriesService, BarSeriesService, StackingBarSeriesService, RangeColumnSeriesService, BubbleSeriesService, TooltipService, CrosshairService, CategoryService, DateTimeService, LogarithmicService, MarkerService, LegendService, ZoomService, DataLabelService, SelectionService, ChartAnnotationService} from './chart.component';
+export {IndicatorDirective,IndicatorsDirective} from './indicators.directive';
+export { ChartComponent, LineSeriesService, ScatterSeriesService, ColumnSeriesService, SplineSeriesService, StripLineService, AreaSeriesService, StepLineSeriesService, StepAreaSeriesService, StackingColumnSeriesService, StackingAreaSeriesService, BarSeriesService, StackingBarSeriesService, RangeColumnSeriesService, BubbleSeriesService, TooltipService, CrosshairService, CategoryService, DateTimeService, LogarithmicService, MarkerService, LegendService, ZoomService, DataLabelService, SelectionService, ChartAnnotationService, HiloSeriesService, HiloOpenCloseSeriesService, WaterfallSeriesService, RangeAreaSeriesService, CandleSeriesService, PolarSeriesService, RadarSeriesService, SmaIndicatorService, TmaIndicatorService, EmaIndicatorService, AccumulationDistributionIndicatorService, MacdIndicatorService, AtrIndicatorService, RsiIndicatorService, MomentumIndicatorService, StochasticIndicatorService, BollingerBandsService, BoxAndWhiskerSeriesService, ErrorBarService, TrendLinesService} from './chart.component';
 export { ChartModule } from './chart.module';
 export { ChartAllModule } from './chart-all.module';

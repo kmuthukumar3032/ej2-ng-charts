@@ -22,13 +22,13 @@ export class RowDirective extends ComplexBase<RowDirective> {
 
 
     /** 
-     * Options to customize the border of the row.
+     * Options to customize the border of the rows.
      */
     public border: any;
     /** 
-     * The height of the row as a string in order to provide input as both like '100px' or '100%'. 
-     * If specified as '100%, row will render to the full height of its chart.
-     * @default 100%
+     * The height of the row as a string accept input both as '100px' and '100%'. 
+     * If specified as '100%, row renders to the full height of its chart.
+     * @default 100%.
      */
     public height: any;
 
