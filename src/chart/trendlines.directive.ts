@@ -3,7 +3,7 @@ import { ComplexBase, ArrayBase, setValue } from '@syncfusion/ej2-ng-base';
 
 
 
-let input: string[] = ['animation', 'backwardForecast', 'enableTooltip', 'fill', 'forwardForecast', 'intercept', 'legendShape', 'marker', 'period', 'polynomialOrder', 'slope', 'type', 'width'];
+let input: string[] = ['animation', 'backwardForecast', 'enableTooltip', 'fill', 'forwardForecast', 'intercept', 'legendShape', 'marker', 'name', 'period', 'polynomialOrder', 'type', 'width'];
 
 /**
  * Series Directive
@@ -64,6 +64,10 @@ export class TrendlineDirective extends ComplexBase<TrendlineDirective> {
      */
     public marker: any;
     /** 
+     * Defines the name of trendline
+     */
+    public name: any;
+    /** 
      * Defines the period, the price changes over which will be considered to predict moving average trend line
      */
     public period: any;
@@ -71,10 +75,6 @@ export class TrendlineDirective extends ComplexBase<TrendlineDirective> {
      * Defines the polynomial order of the polynomial trendline
      */
     public polynomialOrder: any;
-    /** 
-     * Defines the slope of the trendlines
-     */
-    public slope: any;
     /** 
      * Defines the width of the trendline
      */
