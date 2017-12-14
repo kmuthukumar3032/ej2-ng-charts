@@ -18,6 +18,10 @@ rendered using Scalable Vector Graphics (SVG).
 [Angular Demos](http://ej2.syncfusion.com/angular/demos/#/chart/line)
 [Documentation](http://ej2.syncfusion.com/angular/documentation/chart/)
 
+## Changelog
+
+Check the changelog [here](https://github.com/syncfusion/ej2-ng-charts/blob/master/CHANGELOG.md)
+
 ## Installing
 
 To install all dependent packages, use the below command

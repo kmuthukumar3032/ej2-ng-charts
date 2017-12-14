@@ -8,6 +8,14 @@
 
 ## [Unreleased]
 
+## 15.4.22-preview (2017-12-14)
+
+### Common
+
+#### New Features
+
+- Upgraded TypeScript version to 2.6.2
+
 ## 15.4.17-preview (2017-11-13)
 
 ### Chart
