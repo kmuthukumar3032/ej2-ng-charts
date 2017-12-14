@@ -10,6 +10,8 @@
 
 ## 15.4.22-preview (2017-12-14)
 
+## 15.4.22-preview (2017-12-14)
+
 ### Common
 
 #### New Features
