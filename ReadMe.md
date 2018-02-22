@@ -37,3 +37,6 @@ To compile the source files, use the below command
 ```
 npm run build
 ```
+## Changelog
+
+Check the changelog [here](https://github.com/syncfusion/ej2-ng-charts/blob/master/CHANGELOG.md)
